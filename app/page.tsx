@@ -60,14 +60,6 @@ text: "Do gospodarstw bez zasilania 400V. Wygodne podłączenie do typowej insta
 title: "Wersja 400V",
 text: "Do intensywniejszej pracy, większych ilości drewna i użytkowników posiadających zasilanie siłowe.",
 },
-{
-title: "Bez kosza",
-text: "Wersja kompaktowa ze stałą osłoną z siatki stalowej zintegrowaną z ramą maszyny.",
-},
-{
-title: "Z koszem roboczym",
-text: "Większa wygoda pracy, łatwiejsze ustawianie krótszych polan i lepsza organizacja stanowiska.",
-},
 ];
 
 return ( <main className="min-h-screen bg-black text-white">
