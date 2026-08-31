@@ -1,7 +1,6 @@
 name: Remove basket version blocks
 
 on:
-  workflow_dispatch:
   push:
     paths:
       - '.github/workflows/remove-basket-version-blocks.yml'
@@ -18,27 +17,18 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          p = Path('app/page.tsx')
+          p = Path("app/page.tsx")
           s = p.read_text()
-          blocks = [
-          '''{
-title: "Bez kosza",
-text: "Wersja kompaktowa ze stałą osłoną z siatki stalowej zintegrowaną z ramą maszyny.",
-},
-''',
-          '''{
-title: "Z koszem roboczym",
-text: "Większa wygoda pracy, łatwiejsze ustawianie krótszych polan i lepsza organizacja stanowiska.",
-},
-'''
-          ]
-          for block in blocks:
-              if block not in s:
-                  raise SystemExit(f'Block not found: {block}')
-              s = s.replace(block, '', 1)
+          start = s.index('const versions = [')
+          end = s.index('];', start)
+          section = s[start:end]
+          import re
+          section = re.sub(r'\{\s*title: "Bez kosza",\s*text: "[^"]*",\s*\},\s*', '', section)
+          section = re.sub(r'\{\s*title: "Z koszem roboczym",\s*text: "[^"]*",\s*\},\s*', '', section)
+          s = s[:start] + section + s[end:]
           p.write_text(s)
           PY
-      - name: Commit
+      - name: Commit change
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
