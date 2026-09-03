@@ -48,6 +48,37 @@ export async function generateMetadata({
   };
 }
 
+function GpsrDetails() {
+  return (
+    <section id="gpsr" className="mx-auto mt-8 max-w-6xl rounded-3xl border border-white/10 bg-neutral-950 p-6 md:p-10">
+      <h2 className="text-2xl font-black">Informacje o produkcie i bezpieczeństwie (GPSR)</h2>
+      <p className="mt-2 text-sm text-neutral-500">Dane producenta i podmiotu odpowiedzialnego na terenie Unii Europejskiej.</p>
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div>
+          <h3 className="font-black">Producent / marka</h3>
+          <p className="mt-1 font-semibold">POLMECH.TECH</p>
+          <p className="mt-1 text-neutral-300">Maszyny i łuparki przekładniowe rozwijane oraz kompletowane w Polsce.</p>
+        </div>
+        <div>
+          <h3 className="font-black">Podmiot odpowiedzialny w UE</h3>
+          <p className="mt-1 font-semibold">Ekogratis sp. z o.o.</p>
+          <p className="mt-1 text-neutral-300">Jagielska 25/27, 02-886 Warszawa, Polska</p>
+          <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
+            <a className="underline" href="mailto:info@widia.tech">info@widia.tech</a>
+            <a className="underline" href="tel:+48512077770">+48 512 077 770</a>
+          </div>
+        </div>
+      </div>
+      <div className="mt-7 border-t border-white/10 pt-6">
+        <h3 className="font-black">Informacje dotyczące bezpieczeństwa</h3>
+        <p className="mt-2 whitespace-pre-line text-neutral-300">
+          Produkt przeznaczony do mechanicznego łupania drewna opałowego. Przed użyciem należy przeczytać instrukcję, sprawdzić osłony i stosować wymagane środki ochrony indywidualnej. Nie wolno modyfikować konstrukcji ani omijać zabezpieczeń.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default async function OfferPage({
   params,
 }: {
@@ -149,7 +180,7 @@ export default async function OfferPage({
           </div>
 
           <p className="mt-6 text-sm text-neutral-500">
-            Cena i dostępność są pobierane z aktywnej oferty Allegro i odświeżane co godzinę.
+            Darmowa dostawa na terenie Polski. Cena i dostępność są aktualizowane automatycznie.
           </p>
         </div>
       </article>
@@ -163,6 +194,8 @@ export default async function OfferPage({
           Produkt można kupić przez Allegro albo zamówić bezpośrednio za pobraniem. Dla zamówień za pobraniem oferujemy darmową dostawę na terenie Polski po wcześniejszym potwierdzeniu dostępności i warunków wysyłki.
         </p>
       </section>
+
+      <GpsrDetails />
     </main>
   );
 }
