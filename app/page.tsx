@@ -26,7 +26,7 @@ text: "Układ mechaniczny oparty na przekładni i napędzie pasowym. Konstrukcja
 ];
 
 const features = [
-"230V lub 400V do wyboru",
+"400V 3 kW — sprawdzony napęd",
 "do 40 cm średnicy drewna",
 "do 50 cm długości polana",
 "bez pompy hydraulicznej",
@@ -40,7 +40,7 @@ const engineeringPoints = [
 "konstrukcja rozwijana i kompletowana w Polsce",
 "mechaniczny układ przekładniowy bez klasycznej hydrauliki",
 "osłony i rozwiązania konstrukcyjne projektowane z myślą o użytkowaniu w gospodarstwie",
-"możliwość wyboru wersji 230V lub 400V",
+"napęd 400V 3 kW dobrany do pracy pod obciążeniem",
 "polska gwarancja oraz serwis pogwarancyjny producenta",
 ];
 
@@ -53,12 +53,8 @@ const useCases = [
 
 const versions = [
 {
-title: "Wersja 230V",
-text: "Do gospodarstw bez zasilania 400V. Wygodne podłączenie do typowej instalacji jednofazowej.",
-},
-{
-title: "Wersja 400V",
-text: "Do intensywniejszej pracy, większych ilości drewna i użytkowników posiadających zasilanie siłowe.",
+title: "Wersja 400V 3 kW",
+text: "Aktualna wersja z silnikiem PROMOTOR 3 kW 400 V, dobranym do pracy z przekładnią pod obciążeniem.",
 },
 ];
 
