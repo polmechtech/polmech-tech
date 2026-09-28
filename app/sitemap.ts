@@ -14,6 +14,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: "https://polmech.tech/luparki",
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 1,
+    },
     ...products.map((product) => ({
       url: `https://polmech.tech${getOfferPath(product)}`,
       lastModified: now,
